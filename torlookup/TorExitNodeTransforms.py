@@ -48,7 +48,7 @@ def ipToTorList(malEntityData, ipAddr):
       with open('exit-addresses','r') as dataFile:
             for line in dataFile:
                if line.startswith('ExitAddress %s' % ipAddr):
-                  currEntity = malEntityData.addEntity("maltego.Phrase", 'Tor Exit Node - %s' % ipAddr)
+                  currEntity = malEntityData.addEntity("maltego.Phrase", 'Tor Exit Node')
    except Exception,e:
       #Meh I'm just going to catch everything and let the user deal with it
       malEntityData.addEntity("maltego.Phrase", 'ipToAbuseList Error: - %s' % str(e))
