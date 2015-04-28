@@ -14,5 +14,6 @@ Note that none of this is supported by the parties providing these services and 
   * configparser
 
 ## Installation
-Provided you have met the requirements listed above, you need to import each .mtz and modify the path accordingly for your installation.
-
+Provided you have met the requirements listed above, you need to:
+* Import each .mtz and modify the path accordingly for your installation.
+* Copy the credentials.cvg-sample to credentials.cfg and add your keys
