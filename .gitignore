@@ -1,0 +1,4 @@
+credentials.cfg
+*.pyc
+*/*.pyc
+torlookup/exit-addresses

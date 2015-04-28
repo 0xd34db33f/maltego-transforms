@@ -26,9 +26,12 @@ import os, sys
 import requests
 
 from MaltegoTransform import MaltegoTransform
+from credentials import Credentials
+
+creds = Credentials()
+packetmailApiKey = str(creds.getCredentials('PACKETMAIL',u'packetmailApiKey'))
 
 baseUrl = "https://www.packetmail.net/iprep.php/"
-packetmailApiKey = "INSERT KEY HERE"
 
 def ipToAbuseList(malEntityData, ipAddr):
     try:
