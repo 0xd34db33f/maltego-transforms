@@ -17,3 +17,4 @@ Note that none of this is supported by the parties providing these services and 
 Provided you have met the requirements listed above, you need to:
 * Import each .mtz and modify the path accordingly for your installation.
 * Copy the credentials.cvg-sample to credentials.cfg and add your keys
+* Proxy config (untested) can be added to proxy.cfg. Use the format specified in here: http://docs.python-requests.org/en/v1.0.4/user/advanced/

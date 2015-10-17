@@ -24,18 +24,20 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os, sys
 import requests
-import urllib2
 
 import os.path as path
 import time
 
 from MaltegoTransform import MaltegoTransform
+from config import Proxies
+
+proxyList = Proxies()
 
 def downloadUpdatedList():
    try:
-      httpResponse = urllib2.urlopen("https://check.torproject.org/exit-addresses")
+      httpResponse = requests.get("https://check.torproject.org/exit-addresses", proxies = proxyList.getProxies())
       outputFile = open("exit-addresses",'w')
-      outputFile.write(httpResponse.read())
+      outputFile.write(httpResponse.text)
       outputFile.close()
       httpResponse.close()
    except Exception,e:

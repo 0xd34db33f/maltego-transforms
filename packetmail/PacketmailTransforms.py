@@ -27,15 +27,17 @@ import requests
 
 from MaltegoTransform import MaltegoTransform
 from credentials import Credentials
+from config import Proxies
 
 creds = Credentials()
 packetmailApiKey = str(creds.getCredentials('PACKETMAIL',u'packetmailApiKey'))
 
+proxyList = Proxies()
 baseUrl = "https://www.packetmail.net/iprep.php/"
 
 def ipToAbuseList(malEntityData, ipAddr):
     try:
-        httpResponse = requests.get(baseUrl + ipAddr+ '?apikey=' + packetmailApiKey)
+        httpResponse = requests.get(baseUrl + ipAddr+ '?apikey=' + packetmailApiKey, proxies = proxyList.getProxies())
         jsonResponse = httpResponse.json()
         #Sanity check to make sure it appears we got some valid JSON data
         checkForOrigin = 'origin' in jsonResponse
