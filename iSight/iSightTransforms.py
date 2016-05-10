@@ -69,7 +69,7 @@ def getJSON(endpoint,query,queryVars):
    	
    # Get the HTTP authentication headers.
    authHeaders = getAuthHeaders(authKey, respFormat, timestamp)
-   req = requests.get(url+endpoint,params=queryVars, headers=authHeaders, verify=Truei, proxies=proxyList.getProxies())
+   req = requests.get(url+endpoint,params=queryVars, headers=authHeaders, verify=True, proxies=proxyList.getProxies())
    try:
       jsonData = json.loads(req.text)
    except Exception,e:

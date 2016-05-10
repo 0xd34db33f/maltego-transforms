@@ -45,7 +45,7 @@ def ipToAbuseList(malEntityData, ipAddr):
              raise Exception('Invalid JSON data detected from packetmail.net')
         if checkForOrigin == True:
 	     for entities in jsonResponse.keys():
-                  if 'source' in jsonResponse[entities]:
+                  if 'source' in jsonResponse[entities] and not entities == "disclaimer":
                        currEntity = malEntityData.addEntity("maltego.Website", '%s' % entities)
                        currEntity.addAdditionalFields(fieldName="URLS",displayName="URLs",value=jsonResponse[entities]['source']+' '+entities+'\n')
     except Exception,e:
